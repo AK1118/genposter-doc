@@ -1,0 +1,30 @@
+# SizedBox
+import { PropsTable } from '@/components/ui/props-table'
+
+
+**SizedBox** 是最基础的布局构建块之一，本身不会进行任何可视化渲染。其核心作用是 在布局树中占据指定的空间，用于约束子组件或用于占位填充。通常，SizedBox 会与可渲染组件组合使用，以实现精准的尺寸控制与布局调整。
+
+
+## 属性
+
+<PropsTable
+  data={[
+    {
+      name: 'width',
+      type: 'number',
+      default: 0,
+      description: '容器宽度',
+    },
+    {
+      name: 'height',
+      type: 'number',
+      default: '0',
+      description: '容器高度',
+    },
+     {
+      name: 'child',
+      type: 'Widget',
+      description: '子组件',
+    },
+  ]}
+/>

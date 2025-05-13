@@ -1,0 +1,64 @@
+
+# 简介
+
+**GenPoster** 是一个基于 GenUI 构建的海报生成解决方案，旨在以最小的代码成本快速创建美观、响应式、可自定义的海报内容。它充分继承了 GenUI 的设计系统、组件能力和响应式布局特性，在此基础上加入了更强大的画布渲染、动态布局和导出能力，适用于电商、营销、内容创作等多种场景。
+
+
+它不仅是一套海报生成方案，更是一个灵活可拓展的 低层渲染框架，可用于构建营销图、商品图、内容封面、图文混排等复杂视觉内容，致力于在 Web、App、UniApp、微信小程序 等多端场景下实现一致性的高性能渲染体验。
+
+
+## 为什么选择 GenPoster？
+
+- 在传统开发中，不同平台（Web、小程序、App）对 CSS 支持存在差异，样式兼容问题层出不穷。开发者不得不花费大量时间在“像素对齐”“样式还原”上，而非专注于真正的内容表达和布局逻辑。
+
+- 常见方案如  <a className="underline text-primary" href="https://www.npmjs.com/package/html2canvas">html2canvas</a> 虽然能将 DOM 转换为图片，但兼容性受限，并不适用于所有平台。尤其在小程序、App 等环境中，存在诸多实现障碍。
+
+- 上手简单，学会JavaScript即可。
+
+
+#### ✨GenPoster 的出现，彻底解决了这些痛点。
+
+它完全基于 Canvas 自绘，跳出传统 DOM 渲染体系，天然具备“所见即所得、即绘即图”的能力。无论在哪个平台运行，都能确保样式一致、输出稳定。
+
+- 不再为跨端兼容焦头烂额
+- 不再为 DOM 转图片伤脑筋
+- 一套逻辑，布局清晰，渲染统一
+
+## 哲学
+
+
+***GenPoster*** 的布局方式与传统网页 CSS 布局完全不同。它完全基于 Canvas 自绘，没有浏览器默认的流式排版、盒模型或层叠样式。
+在 GenPoster 中，一切视图元素都由 Widget 构建，并通过嵌套的声明式布局组合而成。你可以将它想象成“函数式的 UI 构建过程”——每一个 Widget 就像一个函数，每一次嵌套调用都精准控制其子元素的布局与绘制。
+
+这种方式让 UI 构建更具可预测性与组合性，也让最终渲染效果完全由开发者掌控，告别样式兼容性问题，专注于结构和表现力的统一表达。
+
+举个例子。下面的效果将使用传统HTML+CSS 布局与GenPoster布局进行对比。
+
+<div className="w-full bg-primary/50 p-4 mt-4">
+    <div className="w-10 h-10 bg-primary mx-auto"></div>
+</div>
+
+
+传统的 HTML+CSS 是这样的:
+``` html
+<div className="w-full bg-primary/50 p-4">
+    <div className="w-10 h-10 bg-primary mx-auto"></div>
+</div>
+```
+
+而GenPoster是这样的：
+``` typescript
+Container({
+  alignment:Alignment.center,
+  color:Colors.blue.withOpacity(.5),
+  padding:EdgeInsets.all(4),
+  child:Container({
+    width:10,
+    height:10,
+    color:Colors.blue,
+  })
+})
+```
+
+
+两者之间的代码风格虽然完全不通，但它们实现的效果最终是一致的。

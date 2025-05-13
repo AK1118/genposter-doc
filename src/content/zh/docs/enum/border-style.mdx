@@ -1,0 +1,33 @@
+# BorderStyle
+
+import { PropsTable } from "@/components/ui/props-table";
+
+<PropsTable
+  titles={{
+    name:"枚举名称",
+    value:"枚举值"
+  }}
+  data={[
+    {
+      name: "none",
+      type: "none",
+      default: "none",
+      description: "无效果",
+      required: true,
+    },
+    {
+      name: "solid",
+      type: "solid",
+      default: "solid",
+      description: "实线效果",
+      required: true,
+    },
+    {
+      name: "dashed",
+      type: "dashed",
+      default: "dashed",
+      description: "虚线效果",
+      required: true,
+    },
+  ]}
+/>

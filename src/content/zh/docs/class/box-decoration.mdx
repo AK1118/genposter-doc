@@ -1,0 +1,48 @@
+# BoxDecoration
+
+**BoxDecoration**  是 GenPoster 中用于修饰组件外观的类，它提供了颜色填充、圆角、边框等常用的视觉装饰能力。可用于 Container 等可视组件中，实现如卡片、背景块、边框线等效果。
+
+import { PropsTable } from "@/components/ui/props-table";
+
+
+
+## 属性
+
+<PropsTable
+  data={[
+    {
+      name: "color",
+      type: "Color",
+      default: "null",
+      description: "背景填充颜色。传入一个 Color 对象，如 new Color(0xFF00FF00)。",
+      typeHref:"/docs/class/color"
+    },
+    {
+      name: "borderRadius",
+      type: "BorderRadius",
+      default: "null",
+      description: "圆角设置，支持四个角单独定义。",
+      typeHref:"/docs/class/border-radius"
+    },
+    {
+      name: "border",
+      type: "Border",
+      default: "null",
+      description: "边框样式，支持宽度与颜色定义。",
+      typeHref:"/docs/class/border"
+    },
+    {
+      name: "gradient",
+      type: "Gradient",
+      default: "null",
+      description: "渐变背景（线性、径向等），与 color 互斥。",
+      typeHref:"/docs/class/gradient"
+    },
+    {
+      name: "boxShadow",
+      type: "BoxShadow[]",
+      default: "[]",
+      description: "投影设置，可创建多个阴影。",
+    }
+  ]}
+/>

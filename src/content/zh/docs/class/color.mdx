@@ -1,0 +1,21 @@
+# Color
+
+import { PropsTable } from "@/components/ui/props-table";
+
+**Color** 是 GenPoster 中专用于表示颜色的类。它的核心职责是 描述颜色数值，并在画布渲染中使用。
+不同于 CSS 字符串，GenPoster 中的颜色由整数编码，以确保跨平台的一致性与高性能渲染。
+
+
+## 属性
+
+<PropsTable
+  data={[
+    {
+      name: "color",
+      type: "Number",
+      default: null,
+      description: "用于渲染区域的填充颜色，传入一个十六进制整数。例如：new Color(0xFF00FF)",
+      required:true
+    }
+  ]}
+/>

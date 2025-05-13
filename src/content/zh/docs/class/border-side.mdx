@@ -1,0 +1,51 @@
+# BorderSide
+
+
+**BorderSide** 是 Border 组件的基础构造单位，用于定义边框的样式。每个边框边都由一个 BorderSide 来描述，包含颜色、宽度等属性。
+
+
+## 构造函数
+
+``` typescript
+new BorderSide({
+    color: Color;
+    width: number;
+    style: BorderStyle;
+    dashed: Iterable<number>;
+})
+
+```
+
+## 属性
+
+
+import { PropsTable } from "@/components/ui/props-table";
+
+<PropsTable
+  data={[
+    {
+      name: "color",
+      type: "Color",
+      default: "new Color(0xFF000000)",
+      description: "边框的颜色，默认为黑色"
+    },
+    {
+      name: "width",
+      type: "number",
+      default: "1",
+      description: "边框的粗细，单位为像素"
+    },
+    {
+      name: "dashed",
+      type: "Iterable<number>",
+      default: "[5,5]",
+      description: "当边框被设置为**BorderStyle.dashed**时生效"
+    },
+    {
+      name: "style",
+      type: "BorderStyle",
+      default: "BorderStyle.solid",
+      description: "边框样式",
+    }
+  ]}
+/>

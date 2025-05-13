@@ -1,0 +1,9 @@
+.nextra-sidebar .active a {
+  @apply bg-primary;
+  /* background-color: calc(var(--primary)/.1); */
+  color: white;
+}
+.nextra-sidebar a,
+button {
+  @apply text-foreground;
+}

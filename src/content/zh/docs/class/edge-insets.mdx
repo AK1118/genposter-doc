@@ -1,0 +1,66 @@
+# EdgeInsets
+
+import { PropsTable } from "@/components/ui/props-table";
+
+**EdgeInsets**  是用于设置内边距（padding）或外边距（margin）的类，用于定义四个方向上的间距值。它在 GenPoster 中扮是一个便捷的空间控制工具。
+
+你可以通过一系列静态方法快速创建常用的边距布局。
+
+## 构造方法
+
+``` typescript
+EdgeInsets.only({ left, top, right, bottom })
+EdgeInsets.all(value)
+EdgeInsets.symmetric({ vertical, horizontal })
+EdgeInsets.zero
+```
+
+
+## 属性
+
+<PropsTable
+  data={[
+    {
+      name: "left",
+      type: "number",
+      default: "0",
+      description: "左侧边距",
+    },
+    {
+      name: "top",
+      type: "number",
+      default: "0",
+      description: "上方边距",
+    },
+    {
+      name: "right",
+      type: "number",
+      default: "0",
+      description: "右侧边距",
+    },
+    {
+      name: "bottom",
+      type: "number",
+      default: "0",
+      description: "下方边距",
+    }
+  ]}
+/>
+
+
+使用示例
+
+``` typescript
+// 四边统一边距
+EdgeInsets.all(12)
+
+// 设置水平和垂直方向的边距
+EdgeInsets.symmetric({ vertical: 8, horizontal: 16 })
+
+// 单独设置每个方向
+EdgeInsets.only({ left: 10, top: 5, right: 20, bottom: 0 })
+
+// 无边距
+EdgeInsets.zero
+
+```

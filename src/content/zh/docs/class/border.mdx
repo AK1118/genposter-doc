@@ -1,0 +1,73 @@
+# Border
+
+
+**Border**是用于设置组件边框样式的类。可定义组件四周（上、下、左、右）的边框宽度、颜色。通常与 BoxDecoration 搭配使用。
+
+
+## 构造方法
+
+``` typescript
+new Border({
+  top?: BorderSide,
+  right?: BorderSide,
+  bottom?: BorderSide,
+  left?: BorderSide
+})
+```
+
+
+import { PropsTable } from "@/components/ui/props-table";
+
+
+## 属性
+
+<PropsTable
+  data={[
+    {
+      name: "top",
+      type: "BorderSide",
+      default: "BorderSide.none",
+      description: "上边框，默认无。",
+      typeHref:"/docs/enum/border-style"
+    },
+    {
+      name: "right",
+      type: "BorderSide",
+      default: "BorderSide.none",
+      description: "右边框，默认无。",
+      typeHref:"/docs/enum/border-style"
+    },
+    {
+      name: "bottom",
+      type: "BorderSide",
+      default: "BorderSide.none",
+      description: "下边框，默认无。",
+      typeHref:"/docs/enum/border-style"
+    },
+    {
+      name: "left",
+      type: "BorderSide",
+      default: "BorderSide.none",
+      description: "左边框，默认无。",
+      typeHref:"/docs/enum/border-style"
+    }
+  ]}
+/>
+
+
+## 使用示例
+``` typescript
+// 定义一个边框样式
+const border=Border.all({
+      width: 1,
+      color: Colors.red,
+})
+
+// 应用在 BoxDecoration 中
+new Container({
+  decoration: new BoxDecoration({
+    border: border
+  }),
+  child: new Text("有边框的容器")
+})
+```

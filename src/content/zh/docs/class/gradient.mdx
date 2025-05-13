@@ -1,0 +1,53 @@
+# Gradient
+
+***abstract class***
+
+**Gradient** 是一个抽象基类，用于构建所有渐变类（如 LinearGradient, RadialGradient 等）。该类定义了渐变颜色数组、颜色分布点以及变换矩阵。
+
+它本身不会被直接使用，而是由具体的子类继承实现，例如 LinearGradient 会实现 createShader 方法来创建线性渐变着色器。
+
+``` typescript
+new Gradient(colors: Color[], stops: number[], transform: Matrix4)
+```
+
+## 属性
+import { PropsTable } from "@/components/ui/props-table";
+
+<PropsTable
+  data={[
+    {
+      name: "colors",
+      type: "Color[]",
+      required: true,
+      description: "用于生成渐变的颜色数组，最少需要两个颜色"
+    },
+    {
+      name: "stops",
+      type: "number[]",
+      required: true,
+      description: "每个颜色在渐变中的位置（范围为 0 到 1 之间）"
+    },
+    {
+      name: "transform",
+      type: "Matrix4",
+      default: "Matrix4.identity()",
+      description: "用于对渐变空间进行坐标变换"
+    }
+  ]}
+/>
+
+
+使用示例
+``` typescript
+class MyGradient extends Gradient {
+  createShader(rect: Rect): CanvasGradient {
+    const gradient = ctx.createLinearGradient(rect.left, rect.top, rect.right, rect.bottom)
+    this.initGradient(gradient)
+    return gradient
+  }
+}
+```
+
+
+## 与它相关
+[**LinearGradient**](/docs/class/linear-gradient)

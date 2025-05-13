@@ -1,0 +1,23 @@
+# ColoredBox
+
+import { PropsTable } from "@/components/ui/props-table";
+
+**ColoredBox**是一种用于绘制纯色背景区域的基础 Widget。通常用于包裹子组件并为其提供背景颜色。
+## 属性
+
+<PropsTable
+  data={[
+    {
+      name: "color",
+      type: "Color",
+      default: null,
+      description: "空间内被填充颜色",
+      typeHref:"/docs/class/color"
+    },
+    {
+      name: "child",
+      type: "Widget",
+      description: "子组件",
+    },
+  ]}
+/>

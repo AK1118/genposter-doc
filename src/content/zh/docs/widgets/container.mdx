@@ -1,0 +1,75 @@
+# Container
+
+import { PropsTable } from "@/components/ui/props-table";
+
+**Container** 是 GenPoster 中最常用的布局组件之一，用于包裹并定位子组件。它本身具备尺寸、边距、填充、背景等绘制能力，常用于快速搭建基础布局结构。
+
+与传统前端的 div 或 Flutter 的 Container 类似，GenPoster 的 Container 完全在 Canvas 中自绘，支持灵活组合和嵌套。
+
+## 属性
+
+<PropsTable
+  data={[
+    {
+      name: "width",
+      type: "number",
+      default: "auto",
+      description: "容器宽度，单位为逻辑像素，若不设置将由子组件决定。",
+    },
+    {
+      name: "height",
+      type: "number",
+      default: "auto",
+      description: "容器高度，单位为逻辑像素，若不设置将由子组件决定。",
+    },
+    {
+      name: "padding",
+      type: "EdgeInsets",
+      default: "EdgeInsets.zero",
+      description: "容器的内边距，用于调整内容区域与边界的间距。",
+      typeHref: "/docs/class/edge-insets",
+    },
+    {
+      name: "margin",
+      type: "EdgeInsets",
+      default: "EdgeInsets.zero",
+      description: "容器的外边距，用于调整该组件与其他组件之间的距离。",
+      typeHref: "/docs/class/edge-insets",
+    },
+    {
+      name: "decoration",
+      type: "BoxDecoration",
+      default: "—",
+      description: "容器的装饰，例如背景色、边框、圆角等。",
+      typeHref: "/docs/class/box-decoration",
+    },
+    {
+      name: "alignment",
+      type: "Alignment",
+      default: "Alignment.center",
+      description: "子组件在内部对齐方式",
+      typeHref: " /docs/class/alignment",
+    },
+    {
+      name: "child",
+      type: "Widget",
+      default: "—",
+      description: "容器内部的子组件。",
+    },
+  ]}
+/>
+
+示例用法
+
+```typescript
+Container({
+  width: 200,
+  height: 100,
+  padding: EdgeInsets.all(16),
+  decoration: new BoxDecoration({
+    color: new Color(0xfff0f0f0),
+    borderRadius: BorderRadius.circular(8),
+  }),
+  child: new Text("Hello GenPoster"),
+});
+```

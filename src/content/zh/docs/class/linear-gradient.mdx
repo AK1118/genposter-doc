@@ -1,0 +1,66 @@
+# LinearGradient
+
+**LinearGradient** 是一种线性渐变填充方式，用于在组件的背景中呈现从一种颜色渐变到另一种颜色的视觉效果。它通常作为 BoxDecoration 的一部分进行配置。
+
+## 构造函数
+
+```typescript
+new LinearGradient({
+  colors: Color[],
+  begin?: Alignment,
+  end?: Alignment,
+  stops?: number[]
+})
+```
+
+## 属性
+
+import { PropsTable } from "@/components/ui/props-table";
+
+<PropsTable
+  data={[
+    {
+      name: "colors",
+      type: "Color[]",
+      required: true,
+      description: "渐变的颜色数组，至少包含两个颜色",
+      typeHref:"/docs/class/color"
+    },
+    {
+      name: "begin",
+      type: "Alignment",
+      default: "Alignment.topCenter",
+      description: "渐变起点位置",
+      typeHref:"/docs/class/alignment"
+    },
+    {
+      name: "end",
+      type: "Alignment",
+      default: "Alignment.bottomCenter",
+      description: "渐变终点位置",
+      typeHref:"/docs/class/alignment"
+    },
+    {
+      name: "stops",
+      type: "number[]",
+      default: "自动均匀分布",
+      description: "颜色对应的渐变分布点（0~1之间的数）"
+    }
+  ]}
+/>
+
+
+使用示例
+
+```typescript
+Container({
+  decoration: new BoxDecoration({
+    gradient: new LinearGradient({
+      colors: [new Color(0xFF42A5F5), new Color(0xFF1E88E5)],
+      begin: Alignment.topLeft,
+      end: Alignment.bottomRight
+    })
+  }),
+  child: new Text("渐变背景")
+})
+```

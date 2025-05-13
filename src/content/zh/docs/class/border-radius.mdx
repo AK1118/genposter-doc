@@ -1,0 +1,63 @@
+# BorderRadius
+
+
+**BorderRadius**  是用于描述组件四个角的圆角半径的类，常搭配 BoxDecoration 使用。它提供灵活的 API 来设置统一或各个角的不同圆角值，控制视觉圆润效果。
+
+import { PropsTable } from "@/components/ui/props-table";
+
+
+## 构造函数
+
+``` typescript
+new BorderRadius({
+  topLeft?: number,
+  topRight?: number,
+  bottomLeft?: number,
+  bottomRight?: number
+})
+```
+
+## 属性
+
+
+<PropsTable
+  data={[
+    {
+      name: "topLeft",
+      type: "number",
+      default: "0",
+      description: "左上角圆角半径。",
+    },
+    {
+      name: "topRight",
+      type: "number",
+      default: "0",
+      description: "右上角圆角半径。",
+    },
+    {
+      name: "bottomLeft",
+      type: "number",
+      default: "0",
+      description: "左下角圆角半径。",
+    },
+    {
+      name: "bottomRight",
+      type: "number",
+      default: "0",
+      description: "右下角圆角半径。",
+    }
+  ]}
+/>
+
+
+使用示例
+```typescript
+// 四个角全部设置为圆角10
+BorderRadius.all(10)
+// 只设置左上角为圆角10
+BorderRadius.only({
+  topLeft:10,
+})
+// 四个角都不设置圆角
+BorderRadius.zero
+```
