@@ -1,0 +1,70 @@
+# Stack
+
+**Stack** 是一个多子组件布局组件，用于在同一个空间内将子组件堆叠起来。每个子组件可以通过 [Positioned]() 控制其具体位置。
+
+import { PropsTable } from "@/components/ui/props-table";
+
+## 属性
+
+<PropsTable
+  data={[
+    {
+      name: "children",
+      type: "Widget[]",
+      default: "[]",
+      description: "要堆叠的子组件列表，可以包含 Positioned 用于定位。",
+      required: true,
+    },
+    {
+      name: "alignment",
+      type: "Alignment",
+      typeHref:"/docs/class/alignment",
+      default: "Alignment.topLeft",
+      description: "未使用 Positioned 包裹的子组件的对齐方式。",
+    },
+    {
+      name: "fit",
+      type: "StackFit",
+      typeHref:"/docs/enum/stack-fit",
+      default: "StackFit.loose",
+      description: "未使用 Positioned 包裹的子组件的对齐方式。",
+    },
+    {
+      name: "clipBehavior",
+      type: "Clip",
+      default: "Clip.none",
+      typeHref:"/docs/enum/clip",
+      description: "是否裁剪超出 Stack 范围的内容。",
+    },
+  ]}
+/>
+
+使用示例
+
+```typescript
+Stack({
+  children: [
+    Container({
+      width: 200,
+      height: 200,
+      color: new Color(0xffcccccc),
+    }),
+    Positioned({
+      left: 20,
+      top: 20,
+      child: Container({
+        width: 50,
+        height: 50,
+        color: new Color(0xff00ff00),
+      }),
+    }),
+    Positioned({
+      right: 10,
+      bottom: 10,
+      child: Text("右下角"),
+    }),
+  ],
+  alignment: Alignment.center,
+  clipBehavior: "none",
+});
+```

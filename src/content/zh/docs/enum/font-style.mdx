@@ -1,0 +1,24 @@
+# FontStyle
+
+**FontStyle** 是一个用于设置字体样式（如斜体）的枚举，常与 TextStyle 搭配使用，用于控制文本的视觉风格。
+
+import { PropsTable } from "@/components/ui/props-table";
+
+<PropsTable
+  titles={{
+    name: "枚举名称",
+    value: "枚举值",
+  }}
+  data={[
+    {
+      name: "FontStyle.normal",
+      type: "normal",
+      description: "正常字体样式（非斜体）。",
+    },
+    {
+      name: "FontStyle.italic",
+      type: "italic",
+      description: "斜体样式，适用于强调或引用内容。",
+    },
+  ]}
+/>

@@ -1,0 +1,86 @@
+# Positioned
+
+**Positioned** 是配合 **Stack** 使用的定位组件，用于在堆叠容器中精确定位子组件的位置。
+
+import { PropsTable } from "@/components/ui/props-table";
+
+## 属性
+
+<PropsTable
+data={[
+{
+name: "child",
+type: "Widget",
+default: "—",
+description: "要定位的子组件。",
+required: true,
+},
+{
+name: "left",
+type: "number",
+default: "undefined",
+description: "距离左侧的距离（优先级高于 right 与 width 同时使用时）。",
+},
+{
+name: "right",
+type: "number",
+default: "undefined",
+description: "距离右侧的距离（优先级高于 left 与 width 同时使用时）。",
+},
+{
+name: "top",
+type: "number",
+default: "undefined",
+description: "距离顶部的距离。",
+},
+{
+name: "bottom",
+type: "number",
+default: "undefined",
+description: "距离底部的距离。",
+},
+{
+name: "width",
+type: "number",
+default: "child 宽度",
+description: "强制设置该子组件的宽度（通常与 left/right 配合）。",
+},
+{
+name: "height",
+type: "number",
+default: "child 高度",
+description: "强制设置该子组件的高度（通常与 top/bottom 配合）。",
+},
+]}
+/>
+
+
+
+使用示例
+
+```typescript
+Stack({
+  children: [
+    Container({
+      width: 200,
+      height: 200,
+      color: new Color(0xffcccccc),
+    }),
+    Positioned({
+      left: 20,
+      top: 10,
+      child: Container({
+        width: 50,
+        height: 50,
+        color: new Color(0xffff0000),
+      }),
+    }),
+  ],
+})
+```
+
+
+<div className="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4 mt-4 text-sm">
+  <p className="font-bold">你需要知道：</p>
+  <p className="mt-2">Positioned必须作为Stack的子组件才会生效。</p>
+</div>

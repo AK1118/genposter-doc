@@ -1,0 +1,38 @@
+# Text
+
+**Text** 是一个用于显示静态文字内容的基础组件。它支持自动换行、文字样式设置以及对齐方式等配置，是 UI 中最常用的文本展示组件之一。
+
+import { PropsTable } from "@/components/ui/props-table";
+
+## 属性
+
+<PropsTable
+  data={[
+    {
+      name: "text",
+      type: "string",
+      default: "''",
+      description: "要显示的文本内容。",
+      required: true,
+    },
+    {
+      name: "style",
+      type: "TextStyle",
+      typeHref: "/docs/class/text-style",
+      default: "TextStyle()",
+      description: "用于设置文本样式，如字体大小、颜色、字体粗细等。",
+    },
+  ]}
+/>
+
+使用示例
+
+```typescript
+ClipRect({
+  child: Container({
+    width: 200,
+    height: 200,
+    color: new Color(0xffcccccc),
+  }),
+});
+```

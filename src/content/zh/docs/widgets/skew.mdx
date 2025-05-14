@@ -1,0 +1,50 @@
+# Skew
+
+**Skew** 是一个用于执行**斜切变换（Skew Transform）**的 Widget，适用于创建倾斜效果或模拟透视的几何变换。
+
+通过 skewX 和 skewY 参数可分别控制在 X/Y 轴方向上的斜切角度。
+单位为 弧度（radians），如：Math.PI / 6 表示 30°。
+
+import { PropsTable } from "@/components/ui/props-table";
+
+## 属性
+
+<PropsTable
+  data={[
+    {
+      name: "child",
+      type: "Widget",
+      default: "–",
+      description: "要进行斜切变换的子组件。",
+      required: true,
+    },
+    {
+      name: "skewX",
+      type: "number",
+      default: "0",
+      description: "X 轴方向的斜切角度（单位：弧度）。",
+      required: false,
+    },
+    {
+      name: "skewY",
+      type: "number",
+      default: "0",
+      description: "Y 轴方向的斜切角度（单位：弧度）。",
+      required: false,
+    },
+  ]}
+/>
+
+使用示例
+
+```typescript
+Skew({
+  child: Container({
+    width: 100,
+    height: 100,
+    color: new Color(0xffcc00),
+  }),
+  skewX: Math.PI / 12,
+  skewY: Math.PI / 18,
+});
+```

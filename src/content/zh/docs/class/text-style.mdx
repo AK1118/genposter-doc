@@ -1,0 +1,137 @@
+# TextStyle
+
+**TextStyle** 是一个用于配置文字样式的类，提供了字体、颜色、大小、粗细、装饰、阴影等多种属性，能够灵活地控制文字的视觉呈现效果，常与 Text 组件配合使用。
+
+## 属性
+
+import { PropsTable } from "@/components/ui/props-table";
+
+<PropsTable
+  data={[
+    {
+      name: "color",
+      type: "Color",
+      typeHref: "/docs/class/color",
+      default: "new Color(0xff000000)",
+      description: "文字颜色。",
+    },
+    {
+      name: "fontSize",
+      type: "number",
+      default: "14",
+      description: "字体大小，单位为逻辑像素。",
+    },
+    {
+      name: "fontWeight",
+      type: "FontWeight",
+      typeHref: "/docs/enum/font-weight",
+      default: "FontWeight.normal",
+      description: "字体粗细。",
+    },
+    {
+      name: "fontStyle",
+      type: "FontStyle",
+      typeHref: "/docs/enum/font-style",
+      default: "FontStyle.normal",
+      description: "字体样式，如斜体。",
+    },
+    {
+      name: "fontFamily",
+      type: "string",
+      default: "default",
+      description: "字体族名称，用于指定使用的字体。",
+    },
+    {
+      name: "height",
+      type: "number",
+      default: "1.0",
+      description: "行高倍数，相对于字体大小。",
+    },
+    {
+      name: "letterSpacing",
+      type: "number",
+      default: "0",
+      description: "字间距，单位为逻辑像素。",
+    },
+    {
+      name: "wordSpacing",
+      type: "number",
+      default: "0",
+      description: "词间距，单位为逻辑像素。",
+    },
+    {
+      name: "textAlign",
+      type: "TextAlign",
+      typeHref: "/docs/enum/text-align",
+      default: "TextAlign.start",
+      description: "文本的水平对齐方式。",
+    },
+    {
+      name: "maxLines",
+      type: "number",
+      default: "null",
+      description: "最大显示行数，超出后将被截断。",
+    },
+    {
+      name: "ellipsis",
+      type: "string",
+      default: "null",
+      description: "当文本超出范围时显示的省略符号。",
+    },
+    {
+      name: "decoration",
+      type: "TextDecoration",
+      typeHref: "/docs/enum/text-decoration",
+      default: "TextDecoration.none",
+      description: "文字装饰，如下划线、中划线等。",
+    },
+    {
+      name: "decorationColor",
+      type: "Color",
+      typeHref: "/docs/class/color",
+      default: "与 color 相同",
+      description: "文字装饰线的颜色。",
+    },
+    {
+      name: "decorationStyle",
+      type: "TextDecorationStyle",
+      typeHref: "/docs/enum/text-decoration-style",
+      default: "TextDecorationStyle.solid",
+      description: "文字装饰线的样式，如虚线、波浪线等。",
+    },
+    {
+      name: "shadow",
+      type: "{ shadowColor: Color; shadowBlur: number; shadowOffsetX: number; shadowOffsetY: number; }",
+      description: "文字阴影效果。",
+    },
+  ]}
+/>
+
+使用示例
+
+```typescript
+Text("hello world", {
+  style: new TextStyle({
+    color: Colors.orange,
+    height: 30,
+    maxLines: 4,
+    textAlign: TextAlign.start,
+    fontWeight: FontWeight.bold,
+    fontSize: 20,
+    decoration: TextDecoration.underline,
+    fontFamily: "sans-serif",
+    decorationColor: Colors.red,
+    decorationStyle: TextDecorationStyle.dashed,
+    fontStyle: FontStyle.italic,
+    shadow: {
+      shadowColor: Colors.black,
+      shadowBlur: 10,
+      shadowOffsetX: 5,
+      shadowOffsetY: 10,
+    },
+    wordSpacing: 10,
+    letterSpacing: 10,
+    ellipsis: "...",
+  }),
+});
+```

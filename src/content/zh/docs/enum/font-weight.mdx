@@ -1,0 +1,26 @@
+# FontWeight
+
+**FontWeight** 是一个用于设置文本粗细的枚举，配合 TextStyle 使用。不同的权重值表示字体的粗细程度。
+
+import { PropsTable } from "@/components/ui/props-table";
+
+<PropsTable
+  titles={{
+    name: "枚举名称",
+    value: "枚举值",
+  }}
+  data={[
+    {
+      name: "FontWeight.normal",
+      type: "normal",
+      description: "正常字体粗细，通常为 Regular 或 400。",
+      required: true,
+    },
+    {
+      name: "FontWeight.bold",
+      type: "bold",
+      description: "加粗字体，通常为 Bold 或 700。",
+      required: true,
+    },
+  ]}
+/>

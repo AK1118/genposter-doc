@@ -1,0 +1,58 @@
+# Scale
+
+**Scale** 是一个用于缩放子组件的 Widget，可用于创建视觉缩放效果（例如点击放大、缩小等）。
+它支持整体缩放（scale）和单轴缩放（scaleX、scaleY），默认缩放原点为组件左上角，可通过 alignment 控制缩放中心。
+
+import { PropsTable } from "@/components/ui/props-table";
+
+## 属性
+
+<PropsTable
+data={[
+{
+name: "child",
+type: "Widget",
+default: "–",
+description: "需要被缩放的子组件。",
+required: true,
+},
+{
+name: "alignment",
+type: "Alignment",
+default: "Alignment.topLeft",
+description: "缩放操作的对齐原点。默认以左上角为缩放中心。",
+required: false,
+},
+{
+name: "scale",
+type: "number",
+default: "1",
+description: "整体缩放倍数。如果设置该属性，则 scaleX 与 scaleY 将被忽略。",
+required: false,
+},
+{
+name: "scaleX",
+type: "number",
+default: "1",
+description: "横向缩放倍数，仅在 scale 未定义时生效。",
+required: false,
+},
+{
+name: "scaleY",
+type: "number",
+default: "1",
+description: "纵向缩放倍数，仅在 scale 未定义时生效。",
+required: false,
+},
+]}
+/>
+
+使用示例
+
+```typescript
+Scale({
+  child: Container({ /* ... */ }),
+  alignment: Alignment.center,
+  scale: 1.5,
+})
+```

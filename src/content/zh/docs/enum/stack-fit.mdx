@@ -1,0 +1,38 @@
+# Axis
+
+**StackFit** 枚举用于控制 Stack 中非定位子组件的尺寸适应方式。
+
+import { PropsTable } from "@/components/ui/props-table";
+
+<PropsTable
+  titles={{
+    name: "名称",
+    value: "枚举值",
+  }}
+  data={[
+    {
+      name: "loose",
+      type: "loose",
+      default: "—",
+      description:
+        "非定位子组件可以在 Stack 可用空间内自由调整尺寸。例如，Stack 的宽高为 350×600，则子组件最大可为 350×600。",
+      required: true,
+    },
+    {
+      name: "expand",
+      type: "expand",
+      default: "—",
+      description:
+        "非定位子组件会被强制拉伸为 Stack 的最大尺寸。例如，Stack 的约束为 100×600，则子组件也会被拉伸为 100×600。",
+      required: true,
+    },
+    {
+      name: "passthrough",
+      type: "passthrough",
+      default: "—",
+      description:
+        "非定位子组件直接继承 Stack 父组件传递下来的尺寸约束（不做修改），适用于更复杂的布局场景。",
+      required: true,
+    },
+  ]}
+/>

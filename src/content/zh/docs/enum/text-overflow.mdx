@@ -1,0 +1,30 @@
+# TextOverflow
+
+**TextOverflow** 用于设置当文本内容超出约束范围时的处理方式，常与 TextStyle.maxLines 一起使用。
+
+import { PropsTable } from "@/components/ui/props-table";
+
+<PropsTable
+  titles={{
+    name: "枚举名称",
+    value: "枚举值",
+  }}
+  data={[
+    {
+      name: "TextOverflow.clip",
+      type: "clip",
+      description: "裁剪溢出的文本内容，不显示超出部分。",
+      required:true,
+    },
+    {
+      name: "TextOverflow.ellipsis",
+      type: "ellipsis",
+      description: '使用省略号表示溢出部分，例如 "abc..."。',
+     required:true,},
+    {
+      name: "TextOverflow.visible",
+      type: "visible",
+      description: "不做处理，超出部分照常显示，可能会超出父组件边界。",
+     required:true,},
+  ]}
+/>

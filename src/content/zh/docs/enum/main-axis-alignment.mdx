@@ -1,0 +1,57 @@
+# MainAxisAlignment
+
+**MainAxisAlignment** 枚举用于控制主轴（在 Row 中是水平方向，在 Column 中是垂直方向）上子组件的排列方式。
+
+import { PropsTable } from "@/components/ui/props-table";
+
+<PropsTable
+  titles={{
+    name: "枚举名称",
+    value: "枚举值"
+  }}
+  data={[
+    {
+      name: "start",
+      type: "start",
+      default: "start",
+      description: "从主轴起点开始排列（如 Row 中为左对齐）",
+      required: true,
+    },
+    {
+      name: "end",
+      type: "end",
+      default: "end",
+      description: "从主轴终点开始排列（如 Row 中为右对齐）",
+      required: true,
+    },
+    {
+      name: "center",
+      type: "center",
+      default: "center",
+      description: "所有子元素居中排列",
+      required: true,
+    },
+    {
+      name: "spaceBetween",
+      type: "spaceBetween",
+      default: "spaceBetween",
+      description: "子元素平均分布，两端对齐，中间间隔相等",
+      required: true,
+    },
+    {
+      name: "spaceAround",
+      type: "spaceAround",
+      default: "spaceAround",
+      description: "子元素间距相等，首尾间距为中间的一半",
+      required: true,
+    },
+    {
+      name: "spaceEvenly",
+      type: "spaceEvenly",
+      default: "spaceEvenly",
+      description: "子元素间隔完全一致，包括两端",
+      required: true,
+    },
+  ]}
+/>
+

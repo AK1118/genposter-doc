@@ -1,0 +1,74 @@
+# TextRich
+
+**TextRich** 是一个富文本组件，用于显示带有多样式结构的文本。它通过嵌套的 TextSpan 来组合**_不同样式的文字片段_**，实现多样式文本的灵活渲染。
+
+import { PropsTable } from "@/components/ui/props-table";
+
+## 属性
+
+<PropsTable
+  data={[
+    {
+      name: "textSpan",
+      type: "TextSpan",
+      description: "根节点的文本结构及样式，支持递归嵌套子节点。",
+      typeHref: "/docs/widgets/text-span",
+      required: true,
+    },
+  ]}
+/>
+
+使用示例
+
+```typescript
+TextRich({
+  textSpan: TextSpan({
+    text: "Super",
+    textStyle: new TextStyle({
+      height: 100,
+      fontSize: 20,
+      color: Colors.green,
+    }),
+    children: [
+      TextSpan({
+        text: "愛浢",
+        textStyle: new TextStyle({
+          fontSize: 10,
+          color: Colors.orange,
+        }),
+        children: [],
+      }),
+      TextSpan({
+        text: "の",
+        textStyle: new TextStyle({
+          fontSize: 30,
+          color: Colors.orange,
+        }),
+        children: [],
+      }),
+      TextSpan({
+        text: "笑容",
+        textStyle: new TextStyle({
+          fontSize: 30,
+          color: Colors.pink,
+          fontWeight: FontWeight.bold,
+          decoration: TextDecoration.underline,
+          decorationStyle: TextDecorationStyle.dashed,
+          decorationColor: Colors.red,
+           fontStyle:FontStyle.italic
+        }),
+        children: [
+          TextSpan({
+            text: "都没沵的恬",
+            textStyle: new TextStyle({
+              fontSize: 15,
+              color: Colors.orange,
+            }),
+            children: [],
+          }),
+        ],
+      }),
+    ],
+  }),
+});
+```

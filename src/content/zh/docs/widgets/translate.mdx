@@ -1,0 +1,43 @@
+# Translate
+
+**Translate**是一个用于平移子组件的 Widget，它不会改变子组件本身的尺寸或布局，但会让其在画布上的位置发生偏移。
+
+import { PropsTable } from "@/components/ui/props-table";
+
+## 属性
+
+<PropsTable
+  data={[
+    {
+      name: "child",
+      type: "Widget",
+      default: "–",
+      description: "需要被平移的子组件。",
+      required: true,
+    },
+    {
+      name: "x",
+      type: "number",
+      default: "0",
+      description: "沿 x 轴 的偏移量（单位：像素）。正值向右，负值向左。",
+      required: false,
+    },
+    {
+      name: "y",
+      type: "number",
+      default: "0",
+      description: "沿 y 轴 的偏移量（单位：像素）。正值向下，负值向上。",
+      required: false,
+    },
+  ]}
+/>
+
+使用示例
+
+```typescript
+Translate({
+  child: Container({ /* ... */ }),
+  x: 10,
+  y: 10,
+})
+```

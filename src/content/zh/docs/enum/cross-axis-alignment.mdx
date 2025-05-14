@@ -1,0 +1,51 @@
+# CrossAxisAlignment
+
+**CrossAxisAlignment** 枚举用于控制交叉轴（在 Row 中是垂直方向，在 Column 中是水平方向）上子组件的排列方式。
+
+import { PropsTable } from "@/components/ui/props-table";
+
+<PropsTable
+  titles={{
+    name: "枚举名称",
+    value: "枚举值",
+  }}
+  data={[
+    {
+      name: "start",
+      type: "start",
+      default: "start",
+      description:
+        "子组件在交叉轴起始方向对齐。例如：Row 中为顶部对齐，Column 中为左对齐。",
+      required: true,
+    },
+    {
+      name: "end",
+      type: "end",
+      default: "end",
+      description:
+        "子组件在交叉轴末尾方向对齐。例如：Row 中为底部对齐，Column 中为右对齐。",
+      required: true,
+    },
+    {
+      name: "center",
+      type: "center",
+      default: "center",
+      description: "子组件在交叉轴居中对齐。",
+      required: true,
+    },
+    {
+      name: "stretch",
+      type: "stretch",
+      default: "stretch",
+      description: "子组件在交叉轴方向上拉伸，占据剩余空间。",
+      required: true,
+    },
+    {
+      name: "baseline",
+      type: "baseline",
+      default: "baseline",
+      description: "根据文本基线进行对齐。仅在子组件中包含文本时使用效果明显。",
+      required: true,
+    },
+  ]}
+/>

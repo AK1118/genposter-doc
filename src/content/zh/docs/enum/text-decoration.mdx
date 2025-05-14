@@ -1,0 +1,38 @@
+# TextDecoration
+
+**TextDecoration** 用于设置文字的装饰线样式，如下划线、中划线、上划线等，常与 TextStyle 一起使用。
+
+import { PropsTable } from "@/components/ui/props-table";
+
+<PropsTable
+  titles={{
+    name: "枚举名称",
+    value: "枚举值",
+  }}
+  data={[
+    {
+      name: "TextDecoration.none",
+      type: "none",
+      description: "无装饰线，默认值。",
+      required:true
+    },
+    {
+      name: "TextDecoration.underline",
+      type: "underline",
+      description: "添加下划线，常用于链接或重点标记。",
+      required:true
+    },
+    {
+      name: "TextDecoration.overline",
+      type: "overline",
+      description: "添加上划线，装饰线位于文字顶部。",
+      required:true
+    },
+    {
+      name: "TextDecoration.lineThrough",
+      type: "line-through",
+      description: "添加中划线，常用于表示删除或无效内容。",
+      required:true
+    },
+  ]}
+/>

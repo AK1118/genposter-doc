@@ -25,16 +25,16 @@ export function PropsTable({
     <table className="w-full text-sm my-8">
       <thead className="border-b border-border">
         <tr>
-          <th className="text-start py-2 min-w-[6rem]">{titles?.name || "名称"}</th>
-          <th className="text-start py-2 px-3 ">{titles?.value || "类型"}</th>
-          <th className="text-start py-2 whitespace-nowrap ">{titles?.default || "默认值"}</th>
+          <th className="text-start py-2 min-w-[6rem]">{titles?.name || '名称'}</th>
+          <th className="text-start py-2 px-3 ">{titles?.value || '类型'}</th>
+          <th className="text-start py-2 whitespace-nowrap ">{titles?.default || '默认值'}</th>
         </tr>
       </thead>
       <tbody>
         {data.map((item) => (
           <tr
             key={item.name}
-            className="hover:bg-ring/10 mb-5 border-b border-border"
+            className="hover:bg-foreground/5 mb-5 border-b border-border"
           >
             <td className="py-3">
               <code

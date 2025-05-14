@@ -1,0 +1,52 @@
+# ClipRRect
+
+**ClipRRect** 是一个用于裁剪子组件的容器组件，它将子组件的显示区域限制为具有圆角的矩形。与 ClipRect 不同，ClipRRect 允许通过设置圆角半径来创建更为柔和的裁剪效果，常用于实现带圆角的视觉效果。
+
+import { PropsTable } from "@/components/ui/props-table";
+
+## 属性
+
+<PropsTable
+  data={[
+    {
+      name: "child",
+      type: "Widget",
+      default: "null",
+      description: "要被裁剪的子组件。",
+      required: true,
+    },
+    {
+      name: "borderRadius",
+      type: "BorderRadius",
+      typeHref: "/docs/class/border-radius",
+      default: "BorderRadius.all(Radius.zero)",
+      description: "裁剪矩形的圆角半径，可以使用 all、only 或自定义的圆角。",
+    },
+    {
+      name: "clipBehavior",
+      type: "Clip",
+      typeHref: "/docs/enum/clip",
+      default: "Clip.hardEdge",
+      description: "裁剪行为，决定如何处理超出裁剪区域的内容。",
+    },
+  ]}
+/>
+
+使用示例
+
+```typescript
+ClipRRect({
+  child: Container({
+    width: 200,
+    height: 200,
+    color: new Color(0xffcccccc),
+  }),
+  borderRadius: BorderRadius.all(Radius.circular(20)),
+  clipBehavior: "antiAlias",
+});
+```
+
+<div className="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mt-4 text-sm">
+  <p className="font-bold">提示：</p>
+  <p className="mt-2">ClipRect和ClipRRect区别在于一个是简单的矩形裁剪，另一个是带有圆角的裁剪。</p>
+</div>

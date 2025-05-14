@@ -1,0 +1,38 @@
+# ClipRect
+
+**ClipRect** 是一个用于裁剪子组件的容器组件，它将子组件的显示区域限制为矩形。超出矩形范围的部分会被裁剪掉，常用于实现自定义形状或限制显示区域。
+
+import { PropsTable } from "@/components/ui/props-table";
+
+## 属性
+
+<PropsTable
+  data={[
+    {
+      name: "child",
+      type: "Widget",
+      default: "null",
+      description: "要被裁剪的子组件。",
+      required: true,
+    },
+    {
+      name: "clipBehavior",
+      type: "Clip",
+      typeHref: "/docs/enum/clip",
+      default: "Clip.hardEdge",
+      description: "裁剪行为，决定如何处理超出裁剪区域的内容。",
+    },
+  ]}
+/>
+
+使用示例
+
+```typescript
+ClipRect({
+  child: Container({
+    width: 200,
+    height: 200,
+    color: new Color(0xffcccccc),
+  }),
+});
+```

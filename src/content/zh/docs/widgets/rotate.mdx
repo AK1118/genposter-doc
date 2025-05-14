@@ -1,0 +1,60 @@
+# Rotate
+
+**Rotate** 是一个用于旋转子组件的 Widget，可用于实现任意角度的二维旋转变换。
+你可以指定统一旋转角度（angle），或分别控制 x/y 方向上的旋转（angleX、angleY）。
+旋转中心由 alignment 决定，默认以左上角为旋转基准点。
+
+import { PropsTable } from "@/components/ui/props-table";
+
+## 属性
+
+<PropsTable
+  data={[
+    {
+      name: "child",
+      type: "Widget",
+      default: "–",
+      description: "需要被旋转的子组件。",
+      required: true,
+    },
+    {
+      name: "angle",
+      type: "number",
+      default: "0",
+      description:
+        "统一的旋转角度（单位：弧度），优先级高于 angleX 和 angleY。",
+      required: false,
+    },
+    {
+      name: "angleX",
+      type: "number",
+      default: "0",
+      description: "绕 X 轴的旋转角度（单位：弧度）。在未设置 angle 时生效。",
+      required: false,
+    },
+    {
+      name: "angleY",
+      type: "number",
+      default: "0",
+      description: "绕 Y 轴的旋转角度（单位：弧度）。在未设置 angle 时生效。",
+      required: false,
+    },
+    {
+      name: "alignment",
+      type: "Alignment",
+      default: "Alignment.topLeft",
+      description: "旋转操作的中心点。默认以左上角为旋转中心。",
+      required: false,
+    },
+  ]}
+/>
+
+使用示例
+
+```typescript
+Rotate({
+  child: Container({ /* ... */ }),
+  angle: Math.PI / 4,
+  alignment: Alignment.center,
+})
+```

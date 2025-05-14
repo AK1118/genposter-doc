@@ -1,0 +1,56 @@
+# WrapAlignment
+
+**WrapAlignment**枚举用于控制 Wrap 组件中子元素在主轴方向（即排列方向）上的对齐方式。它与 MainAxisAlignment 类似，但专用于流式布局（Wrap）中。
+
+import { PropsTable } from "@/components/ui/props-table";
+
+<PropsTable
+  titles={{
+    name: "枚举名称",
+    value: "枚举值",
+  }}
+  data={[
+    {
+      name: "start",
+      type: "start",
+      default: "start",
+      description: "将所有子元素从主轴起始位置开始排列。",
+      required: true,
+    },
+    {
+      name: "end",
+      type: "end",
+      default: "end",
+      description: "将所有子元素从主轴结束位置开始反向排列。",
+      required: true,
+    },
+    {
+      name: "center",
+      type: "center",
+      default: "center",
+      description: "将所有子元素居中对齐。",
+      required: true,
+    },
+    {
+      name: "spaceBetween",
+      type: "spaceBetween",
+      default: "spaceBetween",
+      description: "子元素之间平均分布，首尾元素紧贴容器边缘。",
+      required: true,
+    },
+    {
+      name: "spaceAround",
+      type: "spaceAround",
+      default: "spaceAround",
+      description: "子元素之间间距相等，首尾元素与边缘有一半间距。",
+      required: true,
+    },
+    {
+      name: "spaceEvenly",
+      type: "spaceEvenly",
+      default: "spaceEvenly",
+      description: "子元素之间以及边缘间距完全相等。",
+      required: true,
+    },
+  ]}
+/>

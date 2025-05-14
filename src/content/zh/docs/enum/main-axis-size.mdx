@@ -1,0 +1,30 @@
+# MainAxisSize
+
+**MainAxisSize** 是一个枚举类型，用于控制布局容器（如 Row、Column）在主轴方向上占据的空间量。
+
+在实际布局中，你可以决定容器是占据尽可能多的空间，还是只占据刚好包裹内容的大小。
+
+import { PropsTable } from "@/components/ui/props-table";
+
+<PropsTable
+  titles={{
+    name: "枚举名称",
+    value: "枚举值",
+  }}
+  data={[
+    {
+      name: "max",
+      type: "max",
+      default: "max",
+      description: "让容器在主轴方向尽可能占满父组件提供的剩余空间。",
+      required: true,
+    },
+    {
+      name: "min",
+      type: "min",
+      default: "min",
+      description: "让容器在主轴方向上仅包裹其所有子组件所需的最小空间。",
+      required: true,
+    },
+  ]}
+/>

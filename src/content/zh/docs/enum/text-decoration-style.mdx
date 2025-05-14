@@ -1,0 +1,24 @@
+# TextDecorationStyle
+
+**TextDecorationStyle** 用于设置文本装饰线（如下划线、中划线、上划线）的样式，配合 TextStyle.decoration 使用，提升文本视觉表现力。
+
+import { PropsTable } from "@/components/ui/props-table";
+
+<PropsTable
+  titles={{
+    name: "枚举名称",
+    value: "枚举值",
+  }}
+  data={[
+    {
+      name: "TextDecorationStyle.solid",
+      type: "solid",
+      description: "实线样式，默认装饰线表现。",
+     required:true,},
+    {
+      name: "TextDecorationStyle.dashed",
+      type: "dashed",
+      description: "虚线样式，常用于强调或装饰性用途。",
+    required:true, },
+  ]}
+/>

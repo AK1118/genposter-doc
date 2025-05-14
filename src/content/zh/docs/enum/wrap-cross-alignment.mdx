@@ -1,0 +1,35 @@
+# WrapCrossAlignment
+
+**WrapCrossAlignment** 枚举用于控制 Wrap 组件中子元素在交叉轴方向（通常是垂直方向）的对齐方式。它决定了当子元素换行时，在每一行中如何沿交叉轴排列这些元素。
+
+import { PropsTable } from "@/components/ui/props-table";
+
+<PropsTable
+  titles={{
+    name: "枚举名称",
+    value: "枚举值",
+  }}
+  data={[
+    {
+      name: "start",
+      type: "start",
+      default: "start",
+      description: "将子元素在交叉轴上靠起始方向排列（例如上对齐）。",
+      required: true,
+    },
+    {
+      name: "end",
+      type: "end",
+      default: "end",
+      description: "将子元素在交叉轴上靠结束方向排列（例如下对齐）。",
+      required: true,
+    },
+    {
+      name: "center",
+      type: "center",
+      default: "center",
+      description: "将子元素在交叉轴上居中排列。",
+      required: true,
+    },
+  ]}
+/>

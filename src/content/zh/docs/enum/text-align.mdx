@@ -1,0 +1,58 @@
+# TextAlign
+
+**TextAlign** 是一个用于控制文本水平对齐方式的枚举，通常配合 Text 或 TextStyle 使用。它决定了文本在其布局区域内的对齐方向。
+
+import { PropsTable } from "@/components/ui/props-table";
+
+<PropsTable
+  data={[
+    {
+      name: "TextAlign.left",
+      type: "left",
+      description: "文本左对齐，常用于左至右语言环境。",
+      required: true,
+    },
+    {
+      name: "TextAlign.right",
+      type: "right",
+      description: "文本右对齐，常用于右至左语言环境。",
+      required: true,
+    },
+    {
+      name: "TextAlign.center",
+      type: "center",
+      description: "文本居中对齐。",
+      required: true,
+    },
+    {
+      name: "TextAlign.justify",
+      type: "justify",
+      description: "文本两端对齐，自动调整字间距以对齐左右边缘。",
+      required: true,
+    },
+    {
+      name: "TextAlign.start",
+      type: "start",
+      description: "根据文本方向自动选择左对齐或右对齐。",
+      required: true,
+    },
+    {
+      name: "TextAlign.end",
+      type: "end",
+      description: "根据文本方向自动选择右对齐或左对齐。",
+      required: true,
+    },
+    {
+      name: "TextAlign.unset",
+      type: "unset",
+      description: "取消设置，继承上层对齐方式或使用默认行为。",
+      required: true,
+    },
+    {
+      name: "TextAlign.none",
+      type: "none",
+      description: "无特定对齐行为，通常等同于 unset。",
+      required: true,
+    },
+  ]}
+/>

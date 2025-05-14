@@ -1,0 +1,85 @@
+# Wrap
+
+**Wrap** 是一种自动换行的布局容器，它在主轴方向上排列子组件，如果空间不足就会自动换行到下一行（或列），非常适用于标签、图片墙等需要流式排列的场景。
+
+与 Row 不同的是，Wrap 可以在空间不足时自动进行换行。
+
+import { PropsTable } from "@/components/ui/props-table";
+
+## 属性
+
+<PropsTable
+  data={[
+    {
+      name: "children",
+      type: "Widget[]",
+      description: "子组件数组，会按水平方向依次排列",
+    },
+    {
+      name: "direction",
+      type: "Axis",
+      default: "Axis.horizontal",
+      typeHref:"/docs/enum/axis",
+      description: "布局的主轴方向，默认为水平排列（横向换行）。",
+      required: false,
+    },
+    {
+      name: "spacing",
+      type: "number",
+      default: "0",
+      description: "主轴方向子组件之间的间距。",
+      required: false,
+    },
+    {
+      name: "runSpacing",
+      type: "number",
+      default: "0",
+      description: "交叉轴方向每一“行”之间的间距。",
+      required: false,
+    },
+    {
+      name: "alignment",
+      type:"WrapAlignment",
+      default: "WrapAlignment.start",
+      description: "主轴方向上的对齐方式。",
+      typeHref:"/docs/enum/wrap-alignment",
+      required: false,
+    },
+    {
+      name: "runAlignment",
+      type:"WrapAlignment",
+      typeHref:"/docs/enum/wrap-alignment",
+      default: "WrapAlignment.start",
+      description: "每一行在交叉轴方向的对齐方式。",
+      required: false,
+    },
+     {
+      name: "crossAxisAlignment",
+      type:"WrapCrossAlignment",
+      typeHref:"/docs/enum/wrap-cross-alignment",
+      default: "WrapCrossAlignment.start",
+      description: "每一行在交叉轴方向的对齐方式。",
+      required: false,
+    },
+  ]}
+/>
+
+使用示例
+
+```typescript
+SizedBox({
+  width:50,
+  child:Wrap({
+    children:[
+      ...Array.from({ length: 10 }, (_, i) =>
+        Container({
+          width: 10,
+          height: 10,
+          color: Colors.black,
+        })
+      ),
+    ],
+    direction:Axis.horizontal
+  })
+});
+```

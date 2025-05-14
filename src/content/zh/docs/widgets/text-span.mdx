@@ -1,0 +1,60 @@
+# ClipRect
+
+**TextSpan** 是 [TextRich](/docs/widgets/text-rich) 内部使用的文本结构单位，支持设置样式并递归嵌套子节点，从而实现复杂的富文本组合。
+
+import { PropsTable } from "@/components/ui/props-table";
+
+## 属性
+
+<PropsTable
+  data={[
+    {
+      name: "text",
+      type: "string",
+      description: "该片段的文字内容。",
+      required: true,
+    },
+    {
+      name: "textStyle",
+      type: "TextStyle",
+      typeHref: "/docs/class/text-style",
+      description: "应用于该文本片段的样式，可继承父级样式。",
+    },
+    {
+      name: "children",
+      type: "TextSpan[]",
+      default: "[]",
+      description: "子文本片段，可递归嵌套，继承并叠加样式。",
+    },
+  ]}
+/>
+
+使用示例
+
+```typescript
+TextRich({
+  textSpan: new TextSpan({
+    text: "1",
+    textStyle: new TextStyle({
+      color: Colors.red,
+      fontSize: 18,
+    }),
+    children: [
+      new TextSpan({
+        text: "2",
+        textStyle: new TextStyle({
+          color: Colors.green,
+          fontWeight: FontWeight.bold,
+        }),
+      }),
+      new TextSpan({
+        text: "3",
+        textStyle: new TextStyle({
+          color: Colors.blue,
+          fontStyle: FontStyle.italic,
+        }),
+      }),
+    ],
+  }),
+});
+```

@@ -1,0 +1,68 @@
+# Row
+
+**Row** 是 GenPoster 中用于水平布局的基础组件之一，允许你将多个子组件沿水平方向依次排列。
+
+import { PropsTable } from '@/components/ui/props-table'
+
+
+## 属性
+
+
+<PropsTable
+  data={[
+    {
+      name: "children",
+      type: "Widget[]",
+      required: true,
+      description: "子组件数组，会按水平方向依次排列",
+    },
+    {
+      name: "spacing",
+      type: "number",
+      default: "0",
+      description: "子组件之间的间隔",
+    },
+    {
+      name: "mainAxisAlignment",
+      type: "MainAxisAlignment",
+      default: "MainAxisAlignment.center",
+      description: "主轴(水平)方向的对齐方式，例如居中、两端对齐等",
+      typeHref:"/docs/enum/main-axis-alignment"
+    },
+    {
+      name: "crossAxisAlignment",
+      type: "CrossAxisAlignment",
+      default: "CrossAxisAlignment.start",
+      description: "交叉轴(垂直)方向的对齐方式，例如顶部对齐、居中等",
+      typeHref:"/docs/enum/cross-axis-alignment"
+    },
+    {
+      name: "mainAxisSize",
+      type: "MainAxisSize",
+      default: "MainAxisSize.max",
+      description: "主轴填充满父盒子规则",
+      typeHref:"/docs/enum/main-axis-size"
+    },
+  ]}
+/>
+
+使用示例
+
+``` typescript
+//  将10个小方块沿横轴方向布局，间隔10
+Row({
+  mainAxisAlignment:MainAxisAlignment.center,
+  crossAxisAlignment:CrossAxisAlignment.center,
+  mainAxisSize:MainAxisSize.max,
+  spacing: 10,
+  children: [
+    ...Array.from({ length: 10 }, (_, i) =>
+      Container({
+        width: 10,
+        height: 10,
+        color: Colors.black,
+      })
+    ),
+  ],
+})
+```
