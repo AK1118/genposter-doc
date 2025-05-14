@@ -1,0 +1,54 @@
+# GenPosterImage
+
+**GenPosterImage** 是一个图片组件，用于在画布中渲染图片，支持加载本地图片资源或网络图片。
+
+import { PropsTable } from "@/components/ui/props-table";
+
+## 属性
+
+<PropsTable
+  data={[
+    {
+      name: "assetsImageUrl",
+      type: "AssetsImageUrlBuilder",
+      description: "图片资源构造器，用于生成图片路径（支持本地或网络）。",
+      required: true,
+    },
+    {
+      name: "option",
+      type: "Partial<ImageArguments>",
+      description: "图片渲染的配置项，可设置大小、适配模式、对齐等。",
+    },
+    {
+      name: "option.width",
+      type: "number",
+      description: "图片的宽度，单位为像素。",
+    },
+    {
+      name: "option.height",
+      type: "number",
+      description: "图片的高度，单位为像素。",
+    },
+    {
+      name: "option.fit",
+      type: "BoxFit",
+      typeHref: "/docs/enum/box-fit",
+      description: "图片的适配模式，例如 cover、contain、fill 等。",
+    },
+    {
+      name: "option.alignment",
+      type: "Alignment",
+      typeHref: "/docs/class/alignment",
+      description: "图片在容器中的对齐方式。",
+    },
+  ]}
+/>
+
+使用示例
+
+```typescript
+GenPosterImage(`https://picsum.photos/1000`, {
+  fit: BoxFit.cover,
+  placeholderBuilder: () => Text("加载中..."),
+});
+```

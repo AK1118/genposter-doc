@@ -1,0 +1,40 @@
+# LayoutBuilder
+
+**LayoutBuilder**是 GenPoster 中提供的一种布局响应组件，它允许开发者根据其父组件传递下来的约束（constraints）动态地构建布局。
+
+import { PropsTable } from "@/components/ui/props-table";
+
+## 属性
+
+<PropsTable
+  data={[
+    {
+      name: "builder",
+      type: "(constraints: Constraints) => Widget",
+      default: null,
+      description:
+        "构建函数，接收父组件传递的 constraints（约束对象），并返回一个 Widget。",
+      required: true,
+    },
+  ]}
+/>
+
+使用示例
+
+```typescript
+LayoutBuilder({
+  builder: (constraints) => {
+    if (constraints.maxWidth < 200) {
+      return Text("小屏显示");
+    } else {
+      return Row({
+        children: [
+          Text("大屏"),
+          SizedBox({ width: 20 }),
+          Text("显示更多内容"),
+        ],
+      });
+    }
+  },
+});
+```
