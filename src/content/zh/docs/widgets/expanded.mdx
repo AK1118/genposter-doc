@@ -1,0 +1,50 @@
+# Expanded
+
+**Expanded** 是 GenPoster 中用于在弹性布局中按比例扩展空间的组件。它通常用于 Row 或 Column 等布局中，表示子组件应占据主轴方向上剩余的空间。
+
+import { PropsTable } from '@/components/ui/props-table'
+
+
+## 属性
+
+
+<PropsTable
+data={[
+{
+name: "flex",
+type: "number",
+default: "1",
+description: "该子组件在主轴方向上所占的比例。多个 Expanded 会按比例划分剩余空间。",
+},
+{
+name: "child",
+type: "Widget",
+required: true,
+description: "需要被扩展的子组件",
+},
+]}
+/>
+
+使用示例
+
+``` typescript
+// 两个子组件横向排列，第一个占1份空间，第二个占2份空间
+Row({
+  children: [
+    Expanded({
+      flex: 1,
+      child: Container({
+        height: 50,
+        color: Colors.red,
+      }),
+    }),
+    Expanded({
+      flex: 2,
+      child: Container({
+        height: 50,
+        color: Colors.green,
+      }),
+    }),
+  ],
+})
+```

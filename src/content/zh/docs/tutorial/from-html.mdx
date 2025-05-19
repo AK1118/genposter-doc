@@ -1,0 +1,309 @@
+import { CodeCompare } from "@/components/ui/code-compare";
+
+# 组件与HTML对比
+
+---
+
+## Container
+
+<CodeCompare
+  title="Container 示例"
+  code={`Container({
+  width: 10,
+  height: 10,
+  color: Colors.black,
+})`}
+  html={`<div class="w-10 h-10 bg-black"></div>`}
+/>
+
+---
+
+## Row
+
+<CodeCompare
+  title="Row 示例"
+  code={`Row({
+  children: [Text("A"), Text("B")],
+})`}
+  html={`<div class="flex flex-row">A B</div>`}
+/>
+
+---
+
+## Column
+
+<CodeCompare
+  title="Column 示例"
+  code={`Column({
+  children: [Text("A"), Text("B")],
+})`}
+  html={`<div class="flex flex-col">A B</div>`}
+/>
+
+---
+
+## Wrap
+
+<CodeCompare
+  title="Wrap 示例"
+  code={`Wrap({
+  spacing: 4,
+  runSpacing: 4,
+  children: [Text("A"), Text("B"), Text("C")],
+})`}
+  html={`<div class="flex flex-wrap gap-4">A B C</div>`}
+/>
+
+---
+
+## ️ GenPosterImage
+
+<CodeCompare
+  title="GenPosterImage 示例"
+  code={`GenPosterImage(myAssetBuilder, {
+  fit: BoxFit.cover
+})`}
+  html={`<img src="/myasset.png" class="object-cover" />`}
+/>
+
+---
+
+## Stack
+
+<CodeCompare
+  title="Stack 示例"
+  code={`Stack({
+  children: [
+    Text("底层"),
+    Positioned({ top: 10, left: 10, child: Text("定位") }),
+  ],
+})`}
+  html={`<div class="relative">
+  <div>底层</div>
+  <div class="absolute left-[10px] top-[10px]">定位</div>
+</div>`}
+/>
+
+---
+
+## Positioned
+
+<CodeCompare
+  title="Positioned 示例"
+  code={`Positioned({
+  top: 10,
+  left: 10,
+  child: Text("定位"),
+})`}
+  html={`<div class="absolute left-[10px] top-[10px]">定位</div>`}
+/>
+
+---
+
+## Transform
+
+<CodeCompare
+  title="Transform 示例"
+  code={`Transform({
+  transform: Matrix4.identity().rotateZ(Math.PI / 4),
+  alignment: Alignment.center,
+  child: Text("旋转"),
+})`}
+  html={`<div style="transform: rotate(45deg); transform-origin: center;">旋转</div>`}
+/>
+
+---
+
+##  Translate
+
+<CodeCompare
+  title="Translate 示例"
+  code={`Translate({
+  offset: Offset(10, 20),
+  child: Text("平移"),
+})`}
+  html={`<div style="transform: translate(10px, 20px);">平移</div>`}
+/>
+
+---
+
+## Scale
+
+<CodeCompare
+  title="Scale 示例"
+  code={`Scale({
+  scale: 1.5,
+  child: Text("放大"),
+})`}
+  html={`<div style="transform: scale(1.5);">放大</div>`}
+/>
+
+---
+
+## Rotate
+
+<CodeCompare
+  title="Rotate 示例"
+  code={`Rotate({
+  angle: Math.PI / 4,
+  child: Text("旋转"),
+})`}
+  html={`<div style="transform: rotate(45deg);">旋转</div>`}
+/>
+
+---
+
+## Skew
+
+<CodeCompare
+  title="Skew 示例"
+  code={`Skew({
+  skewX: 0.2,
+  skewY: 0.1,
+  child: Text("倾斜"),
+})`}
+  html={`<div style="transform: skew(0.2rad, 0.1rad);">倾斜</div>`}
+/>
+
+---
+
+## Text
+
+<CodeCompare
+  title="Text 示例"
+  code={`Text("Hello", {
+  style: new TextStyle({ fontSize: 16, color: Colors.red }),
+})`}
+  html={`<span style="font-size: 16px; color: red;">Hello</span>`}
+/>
+
+---
+
+## SizedBox
+
+<CodeCompare
+  title="SizedBox 示例"
+  code={`SizedBox({
+  width: 100,
+  height: 50,
+})`}
+  html={`<div style="width: 100px; height: 50px;"></div>`}
+/>
+
+---
+
+## ️ ClipRect 
+
+<CodeCompare
+  title="ClipRect 示例"
+  code={`ClipRect({
+  child: Image(...),
+})`}
+  html={`<div style="overflow: hidden;">...image...</div>`}
+/>
+
+---
+
+## ClipRRect
+
+<CodeCompare
+  title="ClipRRect 示例"
+  code={`ClipRRect({
+  borderRadius: BorderRadius.circular(8),
+  child: Image(...),
+})`}
+  html={`<div style="border-radius: 8px; overflow: hidden;">...image...</div>`}
+/>
+
+---
+
+## TextRich
+
+<CodeCompare
+  title="TextRich 示例"
+  code={`TextRich({
+  textSpan: TextSpan({
+    children: [
+      TextSpan({ text: "Bold", style: new TextStyle({ fontWeight: "bold" }) }),
+      TextSpan({ text: "Normal" }),
+    ]
+  })
+})`}
+  html={`<span><strong>Bold</strong>Normal</span>`}
+/>
+
+---
+
+## LayoutBuilder
+
+<CodeCompare
+  title="LayoutBuilder 示例"
+  code={`LayoutBuilder({
+  builder: (context, constraints) => Text("Width: " + constraints.maxWidth),
+})`}
+  html={`<span>Width: 300</span> <!-- 根据布局环境变化 -->`}
+/>
+
+---
+
+## Padding
+
+<CodeCompare
+  title="Padding 示例"
+  code={`Padding({
+  padding: EdgeInsets.all(10),
+  child: Text("内边距"),
+})`}
+  html={`<div style="padding: 10px;">内边距</div>`}
+/>
+
+---
+
+## Expanded
+
+<CodeCompare
+  title="Expanded 示例"
+  code={`Expanded({
+  flex: 1,
+  child: Text("可扩展"),
+})`}
+  html={`<div class="flex-1">可扩展</div>`}
+/>
+
+---
+
+## Align
+
+<CodeCompare
+  title="Align 示例"
+  code={`Align({
+  alignment: Alignment.centerRight,
+  child: Text("对齐"),
+})`}
+  html={`<div class="flex justify-end items-center">对齐</div>`}
+/>
+
+---
+
+## Center
+
+<CodeCompare
+  title="Center 示例"
+  code={`Center({
+  child: Text("居中"),
+})`}
+  html={`<div class="flex justify-center items-center">居中</div>`}
+/>
+
+---
+
+## Opacity
+
+<CodeCompare
+  title="Opacity 示例"
+  code={`Opacity({
+  opacity: 0.5,
+  child: Text("半透明"),
+})`}
+  html={`<div style="opacity: 0.5;">半透明</div>`}
+/>

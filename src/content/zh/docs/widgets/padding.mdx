@@ -1,0 +1,49 @@
+# Padding
+
+**Padding** 是 GenPoster 中用于添加内边距的组件，可以为其子组件四周添加指定的间距。
+
+import { PropsTable } from '@/components/ui/props-table'
+
+
+## 属性
+
+
+<PropsTable
+data={[
+{
+name: "padding",
+type: "EdgeInsets",
+required: true,
+description: "用于定义四周的内边距，可以使用 EdgeInsets.all、EdgeInsets.symmetric、EdgeInsets.only 等",
+typeHref: "/docs/class/edge-insets"
+},
+{
+name: "child",
+type: "Widget",
+required: true,
+description: "被包裹的子组件",
+},
+]}
+/>
+
+使用示例
+
+``` typescript
+// 给子组件添加上下左右各10的内边距
+Padding({
+  padding: EdgeInsets.all(10),
+  child: Container({
+    width: 100,
+    height: 50,
+    color: Colors.blue,
+  }),
+})
+```
+
+``` typescript
+// 仅左右各添加16的内边距
+Padding({
+  padding: EdgeInsets.symmetric({ horizontal: 16 }),
+  child: Text("Hello"),
+})
+```
