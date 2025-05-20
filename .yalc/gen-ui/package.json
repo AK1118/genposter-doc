@@ -1,0 +1,37 @@
+{
+  "name": "gen-ui",
+  "type": "module",
+  "version": "0.0.7",
+  "author": "AK1118",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AK1118/GenUI.git"
+  },
+  "keywords": [
+    "Wrapper",
+    "UI",
+    "FrameWork",
+    "GenUI",
+    "Poster",
+    "海报",
+    "艮"
+  ],
+  "main": "dist/index.esm.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "LICENSE",
+    "dist/"
+  ],
+  "scripts": {
+    "build": "rollup --config rollup.config.js",
+    "test": "jest",
+    "dev": "webpack-dev-server --config webpack.config.js --mode development",
+    "test:publish": "npm run build && yalc publish"
+  },
+  "dependencies": {
+    "eruda": "^3.2.1"
+  },
+  "yalcSig": "73f3bf8422b44a250f2fe1b92b30573f"
+}

@@ -25,7 +25,7 @@ export const metadata = {
   icons: '/img/favicon.svg',
 } satisfies Metadata
 
-const repo = 'https://github.com/pdsuwwz/nextjs-nextra-starter'
+// const repo = 'https://github.com/pdsuwwz/nextjs-nextra-starter'
 
 const CustomBanner = async ({ lang }: I18nLangAsyncProps) => {
   const { t } = await useServerLocale(lang)
@@ -34,7 +34,7 @@ const CustomBanner = async ({ lang }: I18nLangAsyncProps) => {
       storageKey="starter-banner"
     >
       <div className="flex justify-center items-center gap-1">
-        { t('banner.title') }
+        {/* { t('banner.title') }
         {' '}
         <a
           className="max-sm:hidden text-warning hover:underline"
@@ -42,7 +42,7 @@ const CustomBanner = async ({ lang }: I18nLangAsyncProps) => {
           href={repo}
         >
           { t('banner.more') }
-        </a>
+        </a> */}
       </div>
     </Banner>
   )
@@ -116,10 +116,10 @@ export default async function RootLayout({ children, params }: Props) {
       // ... Your additional head options
       >
         {/* <title>{asPath !== '/' ? `${normalizePagesResult.title} - ${title}` : title}</title> */}
-        <meta property="og:title" content={title} />
+        {/* <meta property="og:title" content={title} />
         <meta name="description" content={description} />
-        <meta property="og:description" content={description} />
-        <link rel="canonical" href={repo} />
+        <meta property="og:description" content={description} /> */}
+        {/* <link rel="canonical" href={repo} /> */}
       </Head>
       <body>
         <ThemeProvider
@@ -149,10 +149,10 @@ export default async function RootLayout({ children, params }: Props) {
               </Footer>
             )}
             search={<Search />}
-            i18n={[
-              { locale: 'en', name: 'English' },
-              { locale: 'zh', name: '简体中文' },
-            ]}
+            // i18n={[
+            //   { locale: 'en', name: 'English' },
+            //   { locale: 'zh', name: '简体中文' },
+            // ]}
             pageMap={pageMap}
             feedback={{ content: '' }}
           // ... Your additional layout options

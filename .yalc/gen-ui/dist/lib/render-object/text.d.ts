@@ -1,0 +1,33 @@
+import { PointerEvent } from "../gesture/events";
+import { HitTestEntry } from "../gesture/hit_test";
+import Vector, { Offset } from "../math/vector";
+import { TextPainter } from "../painting/text-painter";
+import { TextEditingConnection } from "../services/text-editing";
+import { EditTextIndicatorPainter } from "../widgets/text";
+import { PaintingContext, SingleChildRenderView } from "./basic";
+import { AbstractNode } from "./render-object";
+export declare class EditTextRenderView extends SingleChildRenderView {
+    private _textPainter;
+    private hightLightPainter;
+    private indicatorPainter;
+    private _editingConnection;
+    private needClip;
+    private onTap;
+    private onDrag;
+    private selection;
+    get textPainter(): TextPainter;
+    set textPainter(value: TextPainter);
+    constructor(_editingConnection: TextEditingConnection, indicatorPainter: EditTextIndicatorPainter, textPainter: TextPainter);
+    protected dropChild(child: AbstractNode): void;
+    private handleDragStart;
+    private handleDragUpdate;
+    private handleDragEnd;
+    get isRepaintBoundary(): boolean;
+    private handleTapDown;
+    private isRightIndicator;
+    private handleUpdateIndicatorPositionByRect;
+    handleEvent(event: PointerEvent, entry: HitTestEntry): void;
+    performLayout(): void;
+    render(context: PaintingContext, offset?: Vector): void;
+    debugRender(context: PaintingContext, offset?: Offset): void;
+}

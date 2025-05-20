@@ -1,12 +1,12 @@
 export default {
-  systemTitle: '🚀 Nextra 启动模板',
+  systemTitle: '',
   banner: {
     title: '👋 嘿，欢迎来到 Next.js 起步模板!',
     more: '了解详情',
   },
 
-  badgeTitle: '轻量级、开箱即用 🎉',
-  featureSupport: `🔥 现在支持 {{feature}}！`,
+  badgeTitle: '所绘即所得 🎉',
+  featureSupport: `零HTML,体验不一样的绘图方式`,
   lastUpdated: '最后更新于:',
 
   getStarted: '开始使用',
@@ -59,28 +59,28 @@ export default {
   featuresDesc: '轻松构建现代应用，快速启动您的开发流程',
   faqs: [
     {
-      question: '这个启动模板支持哪些框架和技术栈？',
-      answer: '本启动模板支持 Next.js 和 Nextra，并集成了 Tailwind CSS、Framer Motion、Shadcn UI 组件等现代开发技术栈。',
+      question: '哪些地方可以用到这个框架？',
+      answer: '这个框架是现代构建Web海报的新选择，适用于需要快速构建现代Web应用的场景。例如，您可以利用它来创建海报生成器。',
     },
     {
-      question: '我如何开始使用这个模板进行开发？',
-      answer: '只需克隆我们的 GitHub 仓库并按照文档中的步骤运行安装命令，即可开始使用本模板进行开发。',
+      question: '我如何开始使用这个框架进行海报开发？',
+      answer: '该框架目前暂未开源，请通过 158172601@qq.com 联系我。',
     },
     {
-      question: '这个模板适合哪些类型的项目？',
-      answer: '该模板适合用于创建快速、高效的现代 Web 应用程序，包括企业站点、个人博客、电子商务平台等。',
+      question: 'Vue、React、Uniapp可以使用这个框架吗？',
+      answer: '可以，框架基于Canvas自绘，理论上可以适配所有前端框架。',
     },
     {
-      question: '如何添加或修改项目中的组件？',
-      answer: '可以使用提供的组件库，按照文档中的说明进行自定义和扩展，以适应您的具体需求。',
+      question: '这个框架是否支持自定义和扩展？',
+      answer: 'GenPoster本身就是Gen-ui的衍生框架，如需扩展，请通过 158172601@qq.com 联系我。',
     },
     {
-      question: '模板是否提供多语言支持？',
-      answer: '是的，模板内置国际化 (i18n) 功能，可以轻松添加和管理多语言内容，扩大应用的国际用户群。',
+      question: '有Demo吗？',
+      answer: '有的兄弟，有的。Demo请在Uniapp插件库中搜索"GenPoster"获得',
     },
     {
       question: '如何获得技术支持或帮助？',
-      answer: '如果在使用过程中遇到问题，请通过 GitHub @pdsuwwz 与我们联系。',
+      answer: '如果在使用过程中遇到问题，请通过 GitHub @158172601@qq.com 与我们联系。',
     },
   ],
 

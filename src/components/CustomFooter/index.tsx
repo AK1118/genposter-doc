@@ -44,13 +44,13 @@ export function CustomFooter() {
         'text-gray-500/[0.8] dark:text-zinc-300/[0.8]',
       )}
       >
-        <UnderlineLink
+        {/* <UnderlineLink
           link="https://creativecommons.org/licenses/by-nc-sa/4.0/"
           label="CC BY-NC-SA 4.0"
           underlineByDefault
-        />
+        /> */}
 
-        <div className="flex items-center gap-[2px]">
+        {/* <div className="flex items-center gap-[2px]">
           <span className="pl-[4px]">
             Copyright ©
             {' '}
@@ -66,7 +66,7 @@ export function CustomFooter() {
               </>
             )}
           />
-        </div>
+        </div> */}
 
         <Separator
           orientation="vertical"
